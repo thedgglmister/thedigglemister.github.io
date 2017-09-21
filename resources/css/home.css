@@ -9,7 +9,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	height: 650px;
-	background-image: url("temp_home_img.png");
+	background-image: url("../images/temp_home_img.png");
 	background-size: cover; 
     background-position: center;
 	font-weight: 100;
@@ -130,7 +130,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	height: 650px;
-	background-image: url("ft.jpg");
+	background-image: url("../images/ft.jpg");
 	background-size: cover; 
     background-position: center;
 	color: #fff;
@@ -162,6 +162,7 @@ body {
 }
 
 #ft .quote {
+	padding: 0 20px;
 	width: 50%;
 }
 
