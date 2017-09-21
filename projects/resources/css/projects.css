@@ -8,7 +8,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	height: 650px;
-	background-image: url("../../resources/images/temp_home_img.png");
+	background-image: url("../../../resources/images/temp_home_img.png");
 	background-size: cover; 
     background-position: center;
 	font-weight: 100;
