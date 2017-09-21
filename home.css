@@ -1,0 +1,185 @@
+body {
+	margin: 0px;
+}
+
+#home {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 650px;
+	background-image: url("temp_home_img.png");
+	background-size: cover; 
+    background-position: center;
+    font-family: "Raleway";
+	font-weight: 100;
+	color: #fff;
+}
+
+#header {
+	position: absolute;
+	display: flex;
+	justify-content: flex-end;
+	top: 0;
+	width: 100vw;
+
+}
+
+#header div {
+	display: inline-flex;
+	align-items: center;
+	margin: 20px 40px 0px 0px;
+
+}
+
+#header div:hover {
+	color: #6d6d6d;
+}
+
+#header a {
+	padding: 10px 15px;
+	text-decoration: none;
+	font-size: 14px;
+	color: inherit;
+	transition: color 150ms ease-in;
+	cursor: pointer;
+}
+
+#header a:hover {
+	color: #fff;
+}
+
+
+
+
+#home h1 {
+	font-size: 5vw;
+	font-weight: 900;
+	margin: 0px;
+}
+
+#buttons_container {
+	display: flex;
+	justify-content: center;
+}
+
+#home .button {
+	border: 2px solid #fff;
+	width: 10vw;
+	font-size: 2vw;
+	padding: 1vw 0;
+	text-align: center;
+	margin: 1vw;
+	cursor: pointer;
+	transition: color 150ms, background-color 150ms;
+}
+
+#home .button:hover {
+	color: #000;
+	background-color: #fff;
+	font-weight: 900;
+}
+
+
+
+
+
+
+
+#intro {
+	width: 100vw;
+	background-color: #edeeef;
+	font-family: "Merriweather";
+}
+
+#intro h1 {
+	margin: 0;
+	padding-top: 50px;
+	text-align: center;
+}
+
+
+#intro #info {
+	display: inline-block;
+	width: 40%;
+	margin: 2%;
+	margin-right: 8%;
+	vertical-align: middle;
+	font-size: 18px;
+
+}
+
+#intro #headshot {
+	display: inline-block;
+	width: 42%;
+	margin: 3%;
+	margin-left: 5%;
+    border-radius: 5px;
+    vertical-align: middle;
+}
+
+
+
+#ft {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 650px;
+	background-image: url("ft.jpg");
+	background-size: cover; 
+    background-position: center;
+	color: #fff;
+}
+
+#ft h1 {
+    font-family: "Raleway";
+	font-size: 5vw;
+	font-weight: 900;
+	margin: 0px;
+}
+
+#ft p {
+	font-family: "Merriweather";
+	text-align: center;
+	font-weight: 100;
+	margin: 0;
+	padding: 10px 200px;
+}
+
+
+
+
+
+
+
+
+
+#fun_facts {
+	font-family: "Merriweather";
+	background-color: #edeeef;
+	text-align: center;
+	padding: 60px 200px;
+}
+
+
+
+
+
+
+
+
+#photos {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100vw;
+}
+
+#photos .photo_container {
+	min-width: 200px;
+	flex: 1 1 33%;
+}
+
+#photos .photo_container img {
+	display: block;
+	width: 100%;
+}
