@@ -1,5 +1,7 @@
 body {
 	margin: 0px;
+	font-family: "Raleway";
+	transition: scrollTop 2s;
 }
 
 #home {
@@ -10,7 +12,6 @@ body {
 	background-image: url("temp_home_img.png");
 	background-size: cover; 
     background-position: center;
-    font-family: "Raleway";
 	font-weight: 100;
 	color: #fff;
 }
@@ -70,6 +71,8 @@ body {
 	text-align: center;
 	margin: 1vw;
 	cursor: pointer;
+	text-decoration: none;
+	color: #fff;
 	transition: color 150ms, background-color 150ms;
 }
 
@@ -88,13 +91,14 @@ body {
 #intro {
 	width: 100vw;
 	background-color: #edeeef;
-	font-family: "Merriweather";
 }
 
 #intro h1 {
 	margin: 0;
 	padding-top: 50px;
 	text-align: center;
+	font-size: 50px;
+	font-family: "Cardo";
 }
 
 
@@ -120,6 +124,7 @@ body {
 
 
 #ft {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -129,25 +134,46 @@ body {
 	background-size: cover; 
     background-position: center;
 	color: #fff;
+	font-family: "Cardo";
 }
 
 #ft h1 {
-    font-family: "Raleway";
 	font-size: 5vw;
 	font-weight: 900;
 	margin: 0px;
+	font-family: "Raleway";
 }
 
-#ft p {
-	font-family: "Merriweather";
+#ft #description {
 	text-align: center;
 	font-weight: 100;
 	margin: 0;
 	padding: 10px 200px;
+	font-family: "Raleway";
+	font-weight: 200;
 }
 
+#ft #quotes {
+	position: absolute;
+	bottom: 40px;
+	display: flex;
+	justify-content: center;
+	width: 90vw;
+}
 
+#ft .quote {
+	width: 50%;
+}
 
+#ft .quote p {
+	margin: 0;
+}
+
+#ft .quote p:nth-child(2) {
+	position: relative;
+	left: 80px;
+	font-size: 12px;
+}
 
 
 
@@ -155,10 +181,20 @@ body {
 
 
 #fun_facts {
-	font-family: "Merriweather";
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 	background-color: #edeeef;
 	text-align: center;
-	padding: 60px 200px;
+	padding: 0px 200px;
+	height: 400px;
+
+}
+
+#fun_facts h1 {
+	font-size: 40px;
+	font-family: "Cardo";
 }
 
 
@@ -183,3 +219,50 @@ body {
 	display: block;
 	width: 100%;
 }
+
+
+
+
+
+
+#footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 120px;
+	background-color: #1f1f1f;
+	color: #aaa;
+}
+
+#footer div {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	color: #6d6d6d;
+}
+
+#footer a {
+	text-decoration: none;
+	padding: 5px 45px;
+	font-size: 14px;
+	color: inherit;
+	transition: color 150ms ease-in;
+	cursor: pointer;
+}
+
+#footer a:hover {
+	color: #fff;
+}
+
+
+#footer .icon {
+	width: 20px;
+	font-size: 20px;
+	padding: 5px 25px;
+}
+
+
+
+
+

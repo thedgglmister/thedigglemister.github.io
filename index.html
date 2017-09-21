@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Cardo:400i|Cormorant" rel="stylesheet">
 		<link type="text/css" href="home.css" rel="stylesheet" />
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-		<script type="text/javascript" src="home.js"></script>
+
 	</head>
 	<body>
 
@@ -14,7 +16,7 @@
 		<div id="home">
 			<div id="header">
 				<div>
-					<a href=".">HOME</a>
+					<a href="http://www.beniremonger.com">HOME</a>
 					<a class="about_button">ABOUT</a>
 					<a href="resume">RESUME</a>
 					<a href="https://github.com/thedigglemister">PROJECTS</a>			
@@ -24,8 +26,8 @@
 			<div>
 				<h1>SOFTWARE ENGINEER.</h1>
 				<div id="buttons_container">
-					<div class="button about_button">ABOUT</div>
-					<div class="button">RESUME</div>
+					<a class="button about_button">ABOUT</a> <!-- use #intro for href and transtion on scrolltop?-->
+					<a class="button" href="resume">RESUME</a>
 				</div>
 			</div>
 		</div>
@@ -44,15 +46,29 @@
 
 		<div id="ft">
 			<h1>WHERE I LEARN</h1>
-			<p>
+			<p id="description">
 				42 is a two-way street. The GOP gets most of the attention, and indeed a hardline immigration stance has become a defining issue for Republicans. But Democratic voters have become far more liberal on a slew of measurements regarding illegal immigration over the past decade. It was only 11 years ago that a majority of Senate Democrats voted in favor of the Secure Fence Act of 2006, which called for 700 miles of fencing along the U.S.-Mexico border.
 			</p>
+			<div id="quotes">
+				<div class="quote">
+					<p>"My God is 42 impressive. This is not another programming bootcamp. It's another MIT."</p> 
+					<p>-Paul Graham, Co-Founder of Y Combinator</p>
+				</div>
+				<div class="quote">
+					<p>"École 42 might be one of the most ambitious experiments in engineering education."</p> 
+					<p>-Venture Beat</p>
+				</div>
+				<div class="quote">
+					<p>"The way that the students talk about learning there, you feel like its nothing that's ever been created before."</p> 
+					<p>-Evan Spiegel, CEO &amp Co-Founder of Snapchat</p>
+				</div>
+			</div>
 		</div>
 
 
 
 		<div id="fun_facts">
-			<h2>A few fun facts about myself</h2>
+			<h1>A few fun facts about myself</h1>
 			<p>
 				I owned the same nokia brick cell phone from 2006 to 2016, until AT&ampT shut down their 2G network. I love Survivor. I love french press coffee, I have a cat named after MacGyver, my favorite number is 22, I'm not a huge fan of IPAs, I play video games like it's my life, I knew what I wanted to do at the age of 13, I do downhill mountain biking, my favorite food is bacon, and I broke my left arm twice.
 			</p>
@@ -67,5 +83,34 @@
 		 --><div class="photo_container"><img src="jon.jpg" /></div><!--
 		 --><div class="photo_container"><img src="jon.jpg" /></div>
 		</div>
+
+
+		<div id="footer">
+
+			<div>
+				<a href="http://www.beniremonger.com">HOME</a>
+				<a class="about_button">ABOUT</a>
+				<a href="resume">RESUME</a>
+				<a href="https://github.com/thedigglemister">PROJECTS</a>			
+				<a href="squig">SQUIG</a>
+			</div>
+			<div>
+				<a id="linkedin" class="icon icon-linkedin-sign" href="https://www.linkedin.com/in/beniremonger/"></a>
+				<a id="github" class="icon icon-github" href="https://github.com/thedigglemister"></a>
+				<a id="stack" class="icon icon-stackexchange" href="https://stackoverflow.com/users/5585657/digglemister"></a>
+				<a id="mail" class="icon icon-envelope" href="mailto:benjamin.iremonger@gmail.com"></a> 
+				<a id="instagram" class="icon icon-instagram" href="https://www.instagram.com/thedigglemister/"></a>
+			</div>
+		</div>
+
+
+
 	</body>
+	<script>
+		$(".about_button").on("click", function() {
+			$('html, body').animate({ 
+				scrollTop: $("#intro").offset().top
+	    	}, 700);
+	    });
+	</script>
 </html>
