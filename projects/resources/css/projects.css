@@ -3,12 +3,12 @@ body {
 	font-family: "Raleway";
 }
 
-#home {
+#projects_home {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	height: 650px;
-	background-image: url("../images/temp_home_img.png");
+	background-image: url("../resources/images/temp_home_img.png");
 	background-size: cover; 
     background-position: center;
 	font-weight: 100;
@@ -51,10 +51,18 @@ body {
 
 
 
-#home h1 {
+#projects_home h1 {
 	font-size: 5vw;
 	font-weight: 900;
 	margin: 0px;
+	text-align: center;
+}
+
+#projects_home p {
+	font-family: "Cardo";
+	margin: 0;
+	padding: 0 200px;
+	text-align: center;
 }
 
 #buttons_container {
@@ -62,7 +70,7 @@ body {
 	justify-content: center;
 }
 
-#home .button {
+#projects_home .button {
 	border: 2px solid #fff;
 	width: 10vw;
 	font-size: 2vw;
@@ -75,7 +83,7 @@ body {
 	transition: color 150ms, background-color 150ms;
 }
 
-#home .button:hover {
+#projects_home .button:hover {
 	color: #000;
 	background-color: #fff;
 	font-weight: 900;
@@ -87,12 +95,19 @@ body {
 
 
 
-#intro {
-	width: 100vw;
+
+
+.project:nth-child(even) {
 	background-color: #edeeef;
+	color: #000;
 }
 
-#intro h1 {
+.project:nth-child(odd) {
+	background-color: #1f1f1f;
+	color: #ccc;
+}
+
+.project h1 {
 	margin: 0;
 	padding-top: 50px;
 	text-align: center;
@@ -100,8 +115,13 @@ body {
 	font-family: "Cardo";
 }
 
+.project .tagline {
+	margin: 0;
+	text-align: center;
+}
 
-#intro #info {
+
+.project .info {
 	display: inline-block;
 	width: 40%;
 	margin: 2%;
@@ -111,7 +131,7 @@ body {
 
 }
 
-#intro #headshot {
+.project .photos {
 	display: inline-block;
 	width: 42%;
 	margin: 3%;
@@ -122,80 +142,6 @@ body {
 
 
 
-#ft {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	height: 650px;
-	background-image: url("../images/ft.jpg");
-	background-size: cover; 
-    background-position: center;
-	color: #fff;
-	font-family: "Cardo";
-}
-
-#ft h1 {
-	font-size: 5vw;
-	font-weight: 900;
-	margin: 0px;
-	font-family: "Raleway";
-}
-
-#ft #description {
-	text-align: center;
-	font-weight: 100;
-	margin: 0;
-	padding: 10px 200px;
-	font-family: "Raleway";
-	font-weight: 200;
-}
-
-#ft #quotes {
-	position: absolute;
-	bottom: 40px;
-	display: flex;
-	justify-content: center;
-	width: 90vw;
-}
-
-#ft .quote {
-	padding: 0 20px;
-	width: 50%;
-}
-
-#ft .quote p {
-	margin: 0;
-}
-
-#ft .quote p:nth-child(2) {
-	position: relative;
-	left: 80px;
-	font-size: 12px;
-}
-
-
-
-
-
-
-#fun_facts {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	background-color: #edeeef;
-	text-align: center;
-	padding: 0px 200px;
-	height: 400px;
-
-}
-
-#fun_facts h1 {
-	font-size: 40px;
-	font-family: "Cardo";
-}
 
 
 
@@ -204,21 +150,10 @@ body {
 
 
 
-#photos {
-	display: flex;
-	flex-wrap: wrap;
-	width: 100vw;
-}
 
-#photos .photo_container {
-	min-width: 200px;
-	flex: 1 1 33%;
-}
 
-#photos .photo_container img {
-	display: block;
-	width: 100%;
-}
+
+
 
 
 
