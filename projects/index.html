@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Cardo:400i|Cormorant" rel="stylesheet">
-		<link type="text/css" href="resources/css/projects.css" rel="stylesheet" />
+		<link type="text/css" href="projects_resources/css/projects.css" rel="stylesheet" />
+		<link type="text/css" href="projects_resources/css/squig_project.css" rel="stylesheet" />
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script type="text/javascript" src="https://cdn.sobekrepository.org/includes/jquery-rotate/2.2/jquery-rotate.min.js"></script>
+		<script type="text/javascript" src="projects_resources/js/projects.js"></script>
+		<script type="text/javascript" src="projects_resources/js/squig_class.js"></script>
+    	<script type="text/javascript" src="projects_resources/js/squig_project.js"></script>
+    	<script type="text/javascript" src="projects_resources/js/gol.js"></script>
 	</head>
 	<body>
 
@@ -24,9 +31,9 @@
 			<div>
 				<h1>My Work.</h1>
 				<p>
-					This is a selection of projects I completed at 42 Silicon Valley. Some other stuff, some other stuff. More projects can be found on github.
+					A selection of projects I completed at 42 Silicon Valley. More projects can be found on github.
 				</p>
-				<div id="buttons_container">
+				<div class="buttons_container">
 					<a class="button" href="https://github.com/thedigglemister">GITHUB</a>
 					<a class="button" href="http://www.beniremonger.com/resume">RESUME</a>
 				</div>
@@ -37,76 +44,195 @@
 
 
 		<div id="rt" class="project">
-			<h1>Ray Tracer</h1>
-			<p class="tagline">A full-featured 3D graphics renderer implementing a ray tracing algorithm</p>
-			<img class="photos" src="../resources/images/headshot.jpg" /><!--
-		 --><p class="info">
-				Polarization on illegal immigration is a two-way street. The GOP gets most of the attention, and indeed a hardline immigration stance has become a defining issue for Republicans. But Democratic voters have become far more liberal on a slew of measurements regarding illegal immigration over the past decade. It was only 11 years ago that a majority of Senate Democrats voted in favor of the Secure Fence Act of 2006, which called for 700 miles of fencing along the U.S.-Mexico border. It was just 10 years ago that Sen. Bernie Sanders voted against comprehensive immigration reform.
-			</p>
+			<a href="http://www.github.com/thedigglemister/ft_raytracer">Ray Tracer</a>
+			<div class="info">
+				<p>
+					Ray tracing is a technique for generating an image by tracing paths of light and simulating the effects of its encounters with virtual objects. My rendererer was written in C and implemented using a bare-bones library that gave me only the ability to color single pixels. As features were added, I learned tons about optics and the behaviour of light, but also about techniques for approximating reality effciently. 
+				</p>
+				<p>
+					It currently supports phong lighting, parallel and point light sources, interactive shadows, recursive reflections and refractions, and adaptive super sampling. Supported objects include planes, spheres, cones, cylinders, and parabaloids, which can all be rotated and positioned using intrinsic angles and can be made finite or concave by bounding with planes.
+				</p>
+			</div>
+			<div class="big_display carousel">
+				<div class="slide_container">
+					<img class="slide" src="projects_resources/images/refraction_scene.png">
+					<img class="slide" src="projects_resources/images/reflection_scene.png">
+					<img class="slide" src="projects_resources/images/all_shapes_scene.png">
+				</div>
+				<div class="left_button slide_button">&#10094;</div>
+				<div class="right_button slide_button">&#10095;</div>
+			</div>
 		</div>
+
+
+
 
 		<div id="rgol" class="project">
-			<h1>Reverse Game of Life Neural Network</h1>
-			<p class="tagline">A neural network to predict the past in Conway's Game of Life</p>
-		 	<p class="info">
-				Polarization on illegal immigration is a two-way street. The GOP gets most of the attention, and indeed a hardline immigration stance has become a defining issue for Republicans. But Democratic voters have become far more liberal on a slew of measurements regarding illegal immigration over the past decade. It was only 11 years ago that a majority of Senate Democrats voted in favor of the Secure Fence Act of 2006, which called for 700 miles of fencing along the U.S.-Mexico border. It was just 10 years ago that Sen. Bernie Sanders voted against comprehensive immigration reform.
-			</p><!--
-		 --><img class="photos" src="../resources/images/headshot.jpg" />
+			<a href="http://www.github.com/thedigglemister/RGoL_neural_net">Reverse Game of Life Neural Network</a>
+			<div class="info">
+				<p>
+					The goal of Reverse Game of Life is to use machine learning techniques to accurately predict past board states in Conway's Game of Life, given the current state. My approach was to build a feed forward neural network module (without use external libraries), as well as a parallel processing grid search algorithm to track results and fine-tune the hyperparameters of the network and prevent overfitting to the training data.
+				</p>
+				<p>
+					My neural network module was written in Python 3 and can be applied to other machine learning problems. It also can be provided with up to two evaluation data sets and will log the cost and accuracy on these data sets after each training epoch. After training with 200,000 data pieces for about 12 hours, my network was making predictions with about 87% accuracy.
+				</p>
+			</div>
+			<div class="column_display">
+				<div class="left_display">
+				    	<p>Generation counter: <span id="counter">0</span></p>
+		        		<canvas id="grid" width="360px" height="360px"></canvas>
+		        		<div id="gol_button_container">
+				        	<div id="controlLink" class="button">►</div>
+				        	<div id="clearLink" class="button">Clear</div>
+				        </div>
+				</div>
+				<div class="right_display">
+					<p>
+						The Game of Life is played on a grid of square cells, each of which is either alive or dead. Every cell interacts with its eight neighbours, and at each step in time, the following transitions occur:
+					</p>
+					<ol>
+						<li>Underpopulation: Any live cell with fewer than two live neighbours dies.</li>
+						<li>Overpopulation: Any live cell with more than three live neighbours dies.</li>
+						<li>Reproduction: Any dead cell with exactly three live neighbours becomes a live cell.</li>
+						<li>Any live cell with two or three live neighbours lives on to the next generation.</li>
+					</ol>
+					</p>
+				</div>
+			</div>
 		</div>
+
+
+
+
+
 
 		<div id="wolf" class="project">
-			<h1>Wolf3D</h1>
-			<p class="tagline">A first-person perspective game engine, inspired by the world-famous 90’s game Wolfenstein3D</p>
-			<img class="photos" src="../resources/images/headshot.jpg" /><!--
-		 --><p class="info">
-				Polarization on illegal immigration is a two-way street. The GOP gets most of the attention, and indeed a hardline immigration stance has become a defining issue for Republicans. But Democratic voters have become far more liberal on a slew of measurements regarding illegal immigration over the past decade. It was only 11 years ago that a majority of Senate Democrats voted in favor of the Secure Fence Act of 2006, which called for 700 miles of fencing along the U.S.-Mexico border. It was just 10 years ago that Sen. Bernie Sanders voted against comprehensive immigration reform.
-			</p>
+			<a href="http://www.github.com/thedigglemister/ft_wolf3d">Wolf3D</a>
+			<div class="info">
+				<p>
+					A lesson in the history of video games, Wolf3D is a first-person perspective game engine written in C and inspired by the world-famous 90’s game Wolfenstein3D. 
+				</p>
+				<p>
+					Worlds are created using a ray-casting technique, which creates 3D images from 2D numerical grids representing the positions and texures of walls, floors, ceilings, and sprites. While the graphics aren't state of the art, the technique is genius for its efficiency and abilty to easily create or modify new worlds. 
+				</p>
+			</div>
+			<div class="big_display">
+			 	<video controls>
+			 		<source src="projects_resources/videos/wolf.mp4" type="video/mp4" />
+			 	</video>
+			 </div>
 		</div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 		<div id="squig" class="project">
-			<h1>Squig</h1>
-			<p class="tagline">A fully customizable random squiggly line generator built using simple jQuery animations and a lot of math.</p>
-		 	<p class="info">
-				Combines my love for geometry and useless things.
-			</p><!--
-		 --><img class="photos" src="../resources/images/headshot.jpg" />
+			<a href="http://www.beniremonger.com/squig">Squig</a>
+			<div class="info">
+				<p>
+					As a fully customizable random squiggly line module built using simple jQuery animations, Squig combines my love for geometry and useless things. The project came about as I was looking for a fun way to practice front-end web development skills.
+				</p>
+				<p>
+					Each squiggly line is an instance of the squig class, which is initiated with parameters to control its behvaior. A sequence of movements is generated using these parameters and the Math.random() function, and based on this sequence, hundreds of transparent divs are appended to the DOM at precise locations. These are then animated in succession so that their borders create the effect of a single line squigging across the screen.
+				</p>
+			</div>
+		 	<div id="squig_button" class="button">Give it a go</div>
 		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 		<div id="db" class="project">
-			<h1>ft_db</h1>
-			<p class="tagline">A command line based database management system</p>
-			<img class="photos" src="../resources/images/headshot.jpg" /><!--
-		 --><p class="info">
-				Polarization on illegal immigration is a two-way street. The GOP gets most of the attention, and indeed a hardline immigration stance has become a defining issue for Republicans. But Democratic voters have become far more liberal on a slew of measurements regarding illegal immigration over the past decade. It was only 11 years ago that a majority of Senate Democrats voted in favor of the Secure Fence Act of 2006, which called for 700 miles of fencing along the U.S.-Mexico border. It was just 10 years ago that Sen. Bernie Sanders voted against comprehensive immigration reform.
-			</p>
+			<a href="http://www.github.com/thedigglemister/ft_database">Ft_Database</a>
+			<div class="info">
+				<p>
+					Ft_Datebase is a command line based database management system written in C that can be used to create, remove, update, and display user data.
+				</p> 
+				<p>
+					No additional libraries were allowed, so all methods were written from scratch, including custom serialization and deserialization methods to efficiently store data, as well as a custom query language parser modeled after SQL. Other features include automatic table backup in case data is corrupted or lost, the ability to sort or display data based on multiple conditions, and the ability to restrict columns to a specifc data type.
+				</p>
+			</div>
+			<div class="big_display">
+				<img src="projects_resources/images/db1.png" />
+				<img src="projects_resources/images/db2.png" />
+				<img src="projects_resources/images/db3.png" />
+				<img src="projects_resources/images/db4.png" />
+			</div>
 		</div>
+
+
+
+
 
 		<div id="fractal" class="project">
-			<h1>Fractal</h1>
-			<p class="tagline">Create beautiful fractals that can be explored using mouse and key events</p>
-		 	<p class="info">
-				Polarization on illegal immigration is a two-way street. The GOP gets most of the attention, and indeed a hardline immigration stance has become a defining issue for Republicans. But Democratic voters have become far more liberal on a slew of measurements regarding illegal immigration over the past decade. It was only 11 years ago that a majority of Senate Democrats voted in favor of the Secure Fence Act of 2006, which called for 700 miles of fencing along the U.S.-Mexico border. It was just 10 years ago that Sen. Bernie Sanders voted against comprehensive immigration reform.
-			</p><!--
-		 --><img class="photos" src="../resources/images/headshot.jpg" />
+			<a href="http://www.github.com/thedigglemister/ft_fractal">Ft_Fractal</a>
+			<div class="info">
+				<p>
+					Ft_Fractal is a program written in C that renders colorful fractal images that can be explored in real time. Supported fractals are "Mandelbrot", "Julia", "Burning Ship", and "Buddhabrot". 
+				</p>
+				<p>
+					Fractals are essentially visual representations of complex sequences generated by repeated application of a complex function. Each pixel is colored according to how long it takes the pixel's associated complex sequence to converge. Shading is done by transforming a discrete color space to continuous one and using trigonometric functions to get a cyclic effect.
+				</p>
+				<p>
+					The p_thread multithreading library was used to speed up frame rendering time, which allows for smooth zooming despite incredibly high computational cost.
+				</p>
+			</div>
+			<div class="big_display">
+			 	<video controls>
+			 		<source src="projects_resources/videos/fractal.mp4" type="video/mp4" />
+			 	</video>
+			</div>
+
 		</div>
+
+
+
+
+
+
+
+
 
 		<div id="fillit" class="project">
-			<h1>Fillit</h1>
-			<p class="tagline">Terminal-based animation of a space-packing algorithm. Basically it's tetris.</p>
-			<img class="photos" src="../resources/images/headshot.jpg" /><!--
-		 --><p class="info">
-				Polarization on illegal immigration is a two-way street. The GOP gets most of the attention, and indeed a hardline immigration stance has become a defining issue for Republicans. But Democratic voters have become far more liberal on a slew of measurements regarding illegal immigration over the past decade. It was only 11 years ago that a majority of Senate Democrats voted in favor of the Secure Fence Act of 2006, which called for 700 miles of fencing along the U.S.-Mexico border. It was just 10 years ago that Sen. Bernie Sanders voted against comprehensive immigration reform.
-			</p>
+			<a href="http://www.github.com/thedigglemister/ft_fillit">Fillit</a>
+			<div class="info">
+				<p>
+					Fillit is program written in C that efficiently finds the optimal solution to packing tetris pieces into the smallest square space possible. I use a recursive backtracking algorithm together with a series of optimizations based on piece shapes.
+				</p>
+				<p>
+					While working on the project I thought it would be interesting to see the algorithm in action, so I incorporated flags that activate a termial-based animation mode complete with multiple color schemes as well as choice of size and speed.
+				</p>
+			</div>
+			<div class="big_display">
+			 	<video controls>
+			 		<source src="projects_resources/videos/fillit.mp4" type="video/mp4" />
+			 	</video>
+			</div>
 		</div>
 
-		<div id="wireframe" class="project">
-			<h1>Wireframe</h1>
-			<p class="tagline">A wireframe renderer with hidden surface removal.</p>
-		 	<p class="info">
-				Polarization on illegal immigration is a two-way street. The GOP gets most of the attention, and indeed a hardline immigration stance has become a defining issue for Republicans. But Democratic voters have become far more liberal on a slew of measurements regarding illegal immigration over the past decade. It was only 11 years ago that a majority of Senate Democrats voted in favor of the Secure Fence Act of 2006, which called for 700 miles of fencing along the U.S.-Mexico border. It was just 10 years ago that Sen. Bernie Sanders voted against comprehensive immigration reform.
-			</p><!--
-		 --><img class="photos" src="../resources/images/headshot.jpg" />
-		</div>
+
 
 
 

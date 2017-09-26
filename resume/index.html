@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
 		<style>
-			body {
-				background-color: #edeeef;
+			html, body {
+				margin: 0;
+				background-color: #1f1f1f;
+				color: #fff;
+				font-family: "Raleway";
 			}
-			iframe {
 
+			iframe {
 				display: block;
 				border: none;
 				margin: auto;
@@ -18,41 +22,101 @@
 			#header {
 				display: flex;
 				justify-content: flex-end;
-				top: 0;
-				width: 100vw;
-				font-family: "Cormorant Garamond";
 			}
 			#header div {
 				display: inline-flex;
 				align-items: center;
 				margin: 15px 40px 25px 0px;
+				color: #6d6d6d;
+			}
 
-			}
-			#header div:hover {
-				color: #ccc;
-			}
 			#header a {
 				padding: 10px 18px;
 				text-decoration: none;
+				font-size: 14px;
 				color: inherit;
 				transition: color 150ms ease-in;
 				cursor: pointer;
 			}
+
+			@media (max-width: 500px) {
+				#header a {
+					padding: 10px 9px;
+					font-size: 12px;
+				}
+
+
+			}
+
 			#header a:hover {
-				color: #000;
+				color: #fff;
+			}
+
+			#footer {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				height: 120px;
+				background-color: #1f1f1f;
+				color: #aaa;
+			}
+
+			#footer div {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				color: #6d6d6d;
+			}
+
+			#footer a {
+				text-decoration: none;
+				padding: 5px 45px;
+				font-size: 14px;
+				color: inherit;
+				transition: color 150ms ease-in;
+				cursor: pointer;
+			}
+
+			#footer a:hover {
+				color: #fff;
+			}
+
+			#footer .icon {
+				width: 20px;
+				font-size: 20px;
+				padding: 5px 25px;
 			}
 		</style>
 	</head>
 	<body>
-		<div id="header">
-			<div>
-				<a href="http://www.beniremonger.com">HOME</a>
-				<a class="about_button">ABOUT</a>
-				<a href="resume">RESUME</a>
-				<a href="https://github.com/thedigglemister">PROJECTS</a>			
-				<a href="squig">SQUIG</a>
+		<div id="resume_home">
+			<div id="header">
+				<div>
+					<a href="http://www.beniremonger.com">HOME</a>
+					<a href="http://www.beniremonger.com/#intro">ABOUT</a>
+					<a href="http://www.beniremonger.com/resume">RESUME</a>
+					<a href="hhttp://www.beniremonger.com/projects">PROJECTS</a>			
+					<a href="http://www.beniremonger.com/squig">SQUIG</a>
+				</div>
+			</div>
+			<iframe src="https://resume.creddle.io/embed/7yyvrgrk0pq"></iframe> 
+			<div id="footer">
+				<div>
+					<a href="http://www.beniremonger.com">HOME</a>
+					<a class="http://www.beniremonger.com/#intro">ABOUT</a>
+					<a href="http://www.beniremonger.com/resume">RESUME</a>
+					<a href="http://www.beniremonger.com/projects">PROJECTS</a>			
+					<a href="http://www.beniremonger.com/squig">SQUIG</a>
+				</div>
+				<div>
+					<a id="linkedin" class="icon icon-linkedin-sign" href="https://www.linkedin.com/in/beniremonger/"></a>
+					<a id="github" class="icon icon-github" href="https://github.com/thedigglemister"></a>
+					<a id="stack" class="icon icon-stackexchange" href="https://stackoverflow.com/users/5585657/digglemister"></a>
+					<a id="mail" class="icon icon-envelope" href="mailto:benjamin.iremonger@gmail.com"></a> 
+					<a id="instagram" class="icon icon-instagram" href="https://www.instagram.com/thedigglemister/"></a>
+				</div>
 			</div>
 		</div>
-		<iframe src="https://resume.creddle.io/embed/7yyvrgrk0pq"></iframe> 
 	</body>
 </html>
