@@ -1,6 +1,7 @@
 body {
 	margin: 0px;
 	font-family: "Raleway";
+	background-color: #26262a;
 }
 
 #home {
@@ -151,6 +152,7 @@ body {
 #ft #description {
 	text-align: center;
 	font-weight: 100;
+	line-height: 1.5;
 }
 
  #quotes {
@@ -233,8 +235,8 @@ body {
 }
 
 #photos .photo_container {
-	min-width: 200px;
-	flex: 1 1 33%;
+	width: 33.33%;
+	min-width: 33.33%;
 }
 
 #photos .photo_container img {
@@ -298,9 +300,65 @@ body {
 		font-size: 14px;
 	}
 
+}
+
+@media (max-width: 750px) {
+
+	#footer a, #footer .icon {
+		padding: 3px 18px;
+	}
+
+}
 
 
+@media (max-width: 650px) {
 
+	#quotes {
+		flex-direction: column;
+		padding: 0px 70px 30px 70px;
+	}
+
+	#quotes .quote_container {
+		padding: 0;
+		font-size: 14px;
+	}
+
+	#quotes .quote_container:nth-child(2){
+		padding-left: 0;
+	}
+
+	#quotes .byline {
+		font-size: 10px;
+	}
+
+	#photos .photo_container {
+	width: 50%;
+	min-width: 50%;
+}
+
+}
+
+
+@media (max-width: 450px) {
+
+	#header a {
+		font-size: 10px;
+		padding: 0 5px;
+	}
+
+	#header div {
+		margin-right: 10px;
+	}
+
+	#footer a {
+		font-size: 10px;
+		padding: 3px 5px;
+	}
+
+	#footer .icon {
+		font-size: 12px;
+		padding: 3px 5px;
+	}
 
 }
 
