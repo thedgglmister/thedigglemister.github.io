@@ -251,6 +251,7 @@ video {
 	display: block;
 	width: 90%;
 	margin: auto;
+	cursor: pointer;
 }
 
 
