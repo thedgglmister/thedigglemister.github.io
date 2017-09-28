@@ -286,6 +286,7 @@ body {
 	padding: 5px 25px;
 }
 
+
 @media (max-width: 900px) {
 
 	#home, #intro, #fun_facts {
@@ -332,9 +333,17 @@ body {
 	}
 
 	#photos .photo_container {
-	width: 50%;
-	min-width: 50%;
-}
+		width: 50%;
+		min-width: 50%;
+	}
+
+	#header {
+		justify-content: center;
+	}
+
+	#header div{
+		margin-right: 0;
+	}
 
 }
 

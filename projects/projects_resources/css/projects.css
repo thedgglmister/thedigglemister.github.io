@@ -234,10 +234,6 @@ body {
 
 
 
-#db  {
-	padding: 70px 30px 100px 30px;
-}
-
 #db img:nth-child(even) {
 	width: 41.5%;
 }
@@ -294,6 +290,18 @@ video {
 	padding: 5px 25px;
 }
 
+
+@media (min-width: 1400px) {
+    .project {
+            padding: 150px 200px 150px 200px;
+    }
+
+    .project .info {
+            padding: 0 50px;
+    }
+}
+
+
 @media (max-width: 900px) {
 
 	.project {
@@ -344,7 +352,7 @@ video {
 		font-size: 20px;
 	}
 
-	.project p ol{
+	.project p, ol{
 		font-size: 12px;
 	}
 
@@ -380,12 +388,24 @@ video {
 		padding: 3px 5px;
 	}
 
+	#header {
+		justify-content: center;
+	}
+
+	#header div{
+		margin-right: 0;
+	}
+
 }
 
 @media (max-width: 450px) {
 
 	.project {
 		padding: 30px 10px 40px 10px;
+	}
+
+	.project a {
+		font-size: 18px;
 	}
 
 	.project .info {
