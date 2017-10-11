@@ -111,15 +111,23 @@ body {
 
 .column_display div {
 	width: 50%;
-	padding: 20px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
-.right_display #info {
-	font-size: 18px;
-	margin: 0;
+.right_display {
+	position: flex;
+	flex-direction: column;
+	padding: 20px 0 20px 20px;
+}
+
+.right_display .info {
+	text-align: center;
+}
+
+.left_display {
+	padding: 20px 20px 20px 0px;
 }
 
 .left_display img {
@@ -134,7 +142,6 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	height: 200px;
 	background-image: url("../images/ft.jpg");
 	background-size: cover; 
     background-position: center;
@@ -286,18 +293,36 @@ body {
 	padding: 5px 25px;
 }
 
+@media (min-width: 1400px) {
+    #home, #intro, #ft, #fun_facts {
+            padding: 150px 200px 150px 200px;
+    }
 
-@media (max-width: 900px) {
+    #intro .info {
+    	padding-left: 40px;
+    }
 
-	#home, #intro, #fun_facts {
-		padding: 100px 60px;
+    #intro .info, #ft #description, #fun_facts p {
+    	font-size: 18px;
+    }
+
+    #intro h1, #ft h1, #fun_facts h1 {
+    	font-size: 60px;
+    }
+}
+
+
+@media (max-width: 950px) {
+
+	#home, #intro, #ft, #fun_facts {
+		padding: 70px 30px 100px 30px;
 	}
 
-	#home h1, #ft h1 {
-		font-size: 50px;
+	#home h1, #ft h1, #fun_facts h1 {
+		font-size: 40px;
 	}
 
-	#intro #info, #ft #description {
+	#intro .info, #ft #description {
 		font-size: 14px;
 	}
 
@@ -309,10 +334,32 @@ body {
 		padding: 3px 18px;
 	}
 
+	#home, #intro, #ft, #fun_facts {
+		padding: 40px 20px;
+	}
+
+	#intro .info, #ft #description, #fun_facts p{
+		font-size: 12px;
+	}
+
 }
 
 
 @media (max-width: 650px) {
+
+	#intro .column_display {
+		display: block;
+	}
+
+
+	.column_display div {
+		width: 100%;
+		padding: 20px 0 0 0 ;
+	}
+
+	#ft h1, #fun_facts h1 {
+		font-size: 30px;
+	}
 
 	#quotes {
 		flex-direction: column;
