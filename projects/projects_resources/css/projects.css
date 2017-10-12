@@ -169,26 +169,31 @@ body {
 	transition: display 2s;
 }
 
-.carousel .slide_button {
+#slide_button_container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#slide_button_container .slide_button {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	position: absolute;
-	width: 10%;
-	height: 10%;
-	background-color: #888;
-	opacity: 0.6;
-	top: 45%;
+	width: 100px;
+	padding-top: 2px;
+	cursor: pointer;
+	color: #333;
+
 }
 
-.carousel .slide_button:hover {
-	opacity: 0.9;
+#slide_button_container .circle_button {
+	height: 8px;
+	width: 8px;
+	border: 2px solid #888;
+	border-radius: 100%;
+	margin: 0 10px;
+	cursor: pointer;
 }
-
-.carousel .right_button {
-	right: 0;
-}
-
 
 
 
