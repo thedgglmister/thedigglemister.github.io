@@ -20,7 +20,7 @@ $(document).ready(function() {
 
     function main() {
         if (mobile)
-            $("body").append("<p id='mobile_error'>Face Puzzle doesn't currently support mobile browsers</p>")
+            $("body").html("<p id='mobile_error'>Face Puzzle doesn't currently support mobile browsers</p>")
         else {
 
             var emptySlot = 9;

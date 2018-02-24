@@ -1,5 +1,5 @@
 body {
-	background-color: #152B55;
+	background-color: #123752;
 }
 
 #wrapper {
@@ -8,7 +8,7 @@ body {
 	top: 0;
 	height: 100%;
 	width: 100%;
-	background-color: #152B55;
+	background-color: #123752;
 }
 
 
@@ -16,16 +16,16 @@ body {
 	position: relative;
 	top: 5%;
 	margin: auto;
-	background-color: #152B55;
+	background-color: #123752;
 	display: none;
 }
 
 .piece {
 	cursor: pointer;
 	position: absolute;
-	background-color: #152B55;
+	background-color: #123752;
 	overflow: hidden;
-	border: 3px solid #152B55;
+	border: 3px solid #123752;
 	transition: top 700ms, left 700ms;
 }
 
@@ -54,6 +54,11 @@ video {
     cursor: url(grabbing.png), pointer; /* Maybe need .cur file for IE, check for other issues */
 }
 
-
+#mobile_error {
+  margin: 40vh auto 0vh auto;
+  text-align:center;
+  font-family: "Quicksand";
+  font-size: 5vw;
+}
 
 
