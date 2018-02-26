@@ -51,7 +51,7 @@ video {
 }
 
 .customcursor {
-    cursor: url(grabbing.png), pointer; /* Maybe need .cur file for IE, check for other issues */
+    cursor: url(resources/img/grabbing.png), pointer; /* Maybe need .cur file for IE, check for other issues */
 }
 
 #mobile_error {
