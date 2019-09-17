@@ -146,15 +146,22 @@ $(document).ready(function() {
 
             function startVideos() {
                 var videos = $("video");
+                var staggers = [];
+                for (let i = 0; i < 8; i++) {
+                  staggers.push(i * 30);
+                }
+                staggers = shuffle(staggers);
                 videos.each(function(index, element) {
                     var el = element;
                     setTimeout(function() {
                         el.play();
-                    }, index*30);
+                    }, staggers[index]);
                 });
                 setInterval(function() {
                     videos.each(function(index, element) {
-                        element.currentTime = 0;
+                        setTimeout(function() {
+                            element.currentTime = 0;
+                        }, staggers[index]);
                     });
                 }, 19500);
             }
@@ -169,6 +176,14 @@ $(document).ready(function() {
                         //element.currentTime = 0;
                     //}
                 //}, 43440);
+            }
+
+            function shuffle(a) {
+              for (let i = a.length - 1; i > 0; i--) {
+                  const j = Math.floor(Math.random() * (i + 1));
+                  [a[i], a[j]] = [a[j], a[i]];
+              }
+              return a;
             }
 
             function adjustSlotPositions() {
