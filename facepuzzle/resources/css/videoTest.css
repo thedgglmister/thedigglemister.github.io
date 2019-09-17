@@ -8,7 +8,7 @@ body {
 	top: 0;
 	height: 100%;
 	width: 100%;
-	background-color: #348feb;
+	background-color: #030316;
 	z-index: -2;
 }
 
@@ -17,17 +17,17 @@ body {
 	position: relative;
 	top: 5%;
 	margin: auto;
-	background-color: #348feb;
+	background-color: #030316;
 	display: none;
 	z-index: -2;
 }
 
 .piece {
-	cursor: pointer;
+
 	position: absolute;
-	background-color: #348feb;
+	background-color: #030316;
 	overflow: hidden;
-	border: 3px solid #348feb;
+	border: 3px solid #030316;
 	transition: top 700ms, left 700ms;
 }
 
@@ -105,9 +105,8 @@ video {
 
 .start-wrapper {
 	position: absolute;
-	width: 100vw;
-	height: 100vh;
-
+	width: 50vw;
+	height: 50vh;
 	top: 0;
 	left: 0;
 	display: flex;
@@ -115,4 +114,23 @@ video {
 	justify-content: center;
 	z-index: 300;
 	background-color: #348feb;
+}
+
+.start-wrapper1 {
+	top: 0;
+	left: 0;
+}
+
+.start-wrapper2 {
+	top: 0;
+	left: 50vw;
+}
+
+.start-wrapper3 {
+	top: 50vh;
+	left: 0;
+}
+.start-wrapper4 {
+	top: 50vh;
+	left: 50vw;
 }

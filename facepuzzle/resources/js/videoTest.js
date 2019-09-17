@@ -229,8 +229,29 @@ $(document).ready(function() {
                 // startAudios();
             });
 
+            var csss = {
+              up: {'top': '-50vh'},
+              down: {'top': '100vh'},
+              left: {'left': '-50vw'},
+              right: {'left': '100vw'},
+            };
+
             $(".start-button").on("click", function() {
-              $('.start-wrapper').css('display', 'none');
+
+              var css1 = Math.floor(Math.random() * 2) == 0 ? csss.up : csss.left;
+              $('.start-wrapper1').animate(css1, 500);
+              var css2 = Math.floor(Math.random() * 2) == 0 ? csss.up : csss.right;
+              $('.start-wrapper2').animate(css2, 500);
+              var css3 = Math.floor(Math.random() * 2) == 0 ? csss.left : csss.down;
+              $('.start-wrapper3').animate(css3, 500);
+              var css4 = Math.floor(Math.random() * 2) == 0 ? csss.right : csss.down;
+              $('.start-wrapper4').animate(css4, 500);
+
+              $('.piece').css('cursor', 'pointer');
+
+
+
+
               initializePuzzle();
               startVideos();
               setTimeout(startAudios, 3000); //30 random moves * 100 ms
