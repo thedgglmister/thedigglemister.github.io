@@ -1,4 +1,4 @@
-//is there a way to just have things transition using slot classes while also making it adjust to window resize? would have to use percents? 
+//is there a way to just have things transition using slot classes while also making it adjust to window resize? would have to use percents?
 
 //whats better practice? just do adjusttopleft manually inside move function, or make separate functions?
 
@@ -15,7 +15,7 @@
 //Is there a better way to do do the slot position better. this comes up a lot. it's whenever you need scaling more complicated than a simple percentage. right now the slot class isn't doing anything except allowing me to select. I have to manually recalculate values, select the class, than update it's css when I want it to change.
 
 $(document).ready(function() {
-    
+
     var mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
     function main() {
@@ -32,7 +32,7 @@ $(document).ready(function() {
             var timer;
             var downTime;
 
-            
+
             function getSlotNumber(element) {
                 for (i=1; i<=9; i++) {
                     if (element.hasClass("slot"+i)) {
@@ -46,12 +46,12 @@ $(document).ready(function() {
                     if (element.hasClass("piece"+i)) {
                         return i;
                     }
-                }    
+                }
             }
 
             function updateTopLeft(newSlotNumber) {
                 $(".slot"+newSlotNumber).css({
-                    "top": slotPositions[newSlotNumber-1].top+"px", 
+                    "top": slotPositions[newSlotNumber-1].top+"px",
                     "left": slotPositions[newSlotNumber-1].left+"px"
                 });
             }
@@ -95,14 +95,13 @@ $(document).ready(function() {
             }
 
             function move(element) {
-
                 var slotNumber = getSlotNumber(element);
                 var pieceNumber = getPieceNumber(element);
 
                 element.removeClass("slot"+slotNumber).addClass("slot"+emptySlot);
                 $(".droppable").removeClass("slot"+emptySlot).addClass("slot"+slotNumber);
                 updateTopLeft(emptySlot);
-                updateTopLeft(slotNumber); 
+                updateTopLeft(slotNumber);
                 muteOrUnmute(pieceNumber);
                 updateEmptyAndMoveables(slotNumber);
                 $(".piece").removeClass("lastMoved");
@@ -127,11 +126,11 @@ $(document).ready(function() {
                 var numberOfRandomMoves = 30
 
                 for (var i=0; i<numberOfRandomMoves; i++) {
-                    setTimeout(randomMove, i*50);
+                    setTimeout(randomMove, i*100);
                 }
                 setTimeout(function() {
                     $(".piece").removeClass("fastpiece");
-                }, numberOfRandomMoves*50);
+                }, numberOfRandomMoves*100);
             }
 
             function adjustVideoMargins() {
@@ -145,12 +144,12 @@ $(document).ready(function() {
 
 
 
-            function startVideos() { 
+            function startVideos() {
                 var videos = $("video");
                 videos.each(function(index, element) {
                     var el = element;
                     setTimeout(function() {
-                        el.play();               
+                        el.play();
                     }, index*30);
                 });
                 setInterval(function() {
@@ -163,13 +162,13 @@ $(document).ready(function() {
 
             function startAudios() {
                 $("audio").each(function(index, element) {
-                    element.play(); 
+                    element.play();
                 });
                 //setInterval(function() {                               /////ATTEMPT TO LOOP AUDIO PERFECTLY
                     //$("audio").each(function(index,element) {
                         //element.currentTime = 0;
                     //}
-                //}, 43440); 
+                //}, 43440);
             }
 
             function adjustSlotPositions() {
@@ -201,8 +200,8 @@ $(document).ready(function() {
                 $(".droppable").height(1.5*pieceSize).width(1.5*pieceSize);
                 adjustSlotPositions();
                 $(".piece").each(function(index, element) {
-                    var slotNumber = getSlotNumber($(element)); 
-                    updateTopLeft(slotNumber);   
+                    var slotNumber = getSlotNumber($(element));
+                    updateTopLeft(slotNumber);
                 });
                 puzzleTop = $("#puzzle").offset().top;
                 puzzleLeft = $("#puzzle").offset().left;
@@ -210,10 +209,19 @@ $(document).ready(function() {
 
 
             $(window).on("load", function() {
-                initializePuzzle();
-                startVideos();
-                startAudios();
+                // initializePuzzle();
+                // startVideos();
+                // startAudios();
             });
+
+            $(".start-button").on("click", function() {
+              $('.start-wrapper').css('display', 'none');
+              initializePuzzle();
+              startVideos();
+              setTimeout(startAudios, 3000); //30 random moves * 100 ms
+            });
+
+
 
 
 
@@ -232,7 +240,7 @@ $(document).ready(function() {
             });
 
             $(window).on("mouseup", function() {
-                clearTimeout(timer);                                         //Require 100 milliseconds of mousedown before customcursor is added                   
+                clearTimeout(timer);                                         //Require 100 milliseconds of mousedown before customcursor is added
                 $("body *").removeClass("customcursor");
             })
 
@@ -294,9 +302,21 @@ $(document).ready(function() {
 
         $(".droppable").droppable({
             tolerance: "touch",
-            drop: function(event, ui) {  
+            drop: function(event, ui) {
                 move(ui.draggable);
             }
+        });
+
+
+
+        $('.blocker').on('click', function(event) {
+          console.log('test')
+          event.stopPropagation();
+        });
+
+        $('.blocker').on('drag', function(event) {
+          console.log('test')
+          event.stopPropagation();
         });
 
 
@@ -310,7 +330,3 @@ main();
 
 
 });
-
-
-
-	

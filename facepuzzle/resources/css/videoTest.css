@@ -1,5 +1,5 @@
 body {
-	background-color: #123752;
+	background-color: #348feb;
 }
 
 #wrapper {
@@ -8,7 +8,8 @@ body {
 	top: 0;
 	height: 100%;
 	width: 100%;
-	background-color: #123752;
+	background-color: #348feb;
+	z-index: -2;
 }
 
 
@@ -16,16 +17,17 @@ body {
 	position: relative;
 	top: 5%;
 	margin: auto;
-	background-color: #123752;
+	background-color: #348feb;
 	display: none;
+	z-index: -2;
 }
 
 .piece {
 	cursor: pointer;
 	position: absolute;
-	background-color: #123752;
+	background-color: #348feb;
 	overflow: hidden;
-	border: 3px solid #123752;
+	border: 3px solid #348feb;
 	transition: top 700ms, left 700ms;
 }
 
@@ -43,7 +45,7 @@ video {
 
 .droppable {
 	cursor: default;
-	z-index:-1;
+	z-index: -1;
 	border: 3px solid transparent;
 	background-color: transparent;
 	margin-left: -8.33%;
@@ -61,4 +63,56 @@ video {
   font-size: 5vw;
 }
 
+.piece9 {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
 
+.start-button {
+	display: block;
+	margin: auto;
+	z-index: 102;
+
+	height: 80px;
+	width: 200px;
+	background-color: #348feb;
+	border-radius: 5px;
+	font-size: 20px;
+	font-family: Verdana;
+	border: 2px solid #215e9c;
+	color: #215e9c;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+
+}
+.start-button:hover {
+	color: #18436e;
+	border: 2px solid #18436e;
+
+ }
+
+.blocker {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 5;
+}
+
+.start-wrapper {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	z-index: 300;
+	background-color: #348feb;
+}
