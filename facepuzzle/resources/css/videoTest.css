@@ -60,7 +60,7 @@ video {
 #mobile_error {
   margin: 40vh auto 0vh auto;
   text-align:center;
-  font-family: "Quicksand";
+  font-family: "Quicksand", sans-serif;
   font-size: 5vw;
 }
 
