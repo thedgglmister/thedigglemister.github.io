@@ -25,7 +25,6 @@
 					<a href="http://www.beniremonger.com/#intro">ABOUT</a>
 					<a href="http://www.beniremonger.com/resume">RESUME</a>
 					<a href="http://www.beniremonger.com/projects">PROJECTS</a>			
-					<a href="http://www.beniremonger.com/squig">SQUIG</a>
 				</div>
 			</div>
 			<div>
@@ -47,7 +46,7 @@
 			<a href="http://www.github.com/thedigglemister/ft_raytracer">Ray Tracer</a>
 			<div class="info">
 				<p>
-					Ray tracing is a technique for generating an image by tracing paths of light and simulating the effects of its encounters with virtual objects. My rendererer was written in C and implemented using a bare-bones library that gave me only the ability to color single pixels. As features were added, I learned tons about optics and the behaviour of light, but also about techniques for approximating reality effciently. 
+					Ray tracing is a technique for generating an image by tracing paths of light and simulating the effects of its encounters with virtual objects. My renderer was written in C and implemented using a bare-bones library that gave me only the ability to color single pixels. As features were added, I learned tons about optics and the behaviour of light, but also about techniques for approximating reality effciently. 
 				</p>
 				<p>
 					It currently supports phong lighting, parallel and point light sources, interactive shadows, recursive reflections and refractions, and adaptive super sampling. Supported objects include planes, spheres, cones, cylinders, and parabaloids, which can all be rotated and positioned using intrinsic angles and can be made finite or concave by bounding with planes.
@@ -76,7 +75,7 @@
 			<a href="http://www.github.com/thedigglemister/RGoL_neural_net">Reverse Game of Life Neural Network</a>
 			<div class="info">
 				<p>
-					The goal of Reverse Game of Life is to use machine learning techniques to accurately predict past board states in Conway's Game of Life, given the current state. My approach was to build a feed forward neural network module (without use external libraries), as well as a parallel processing grid search algorithm to track results and fine-tune the hyperparameters of the network and prevent overfitting to the training data.
+					The goal of Reverse Game of Life was to use machine learning techniques to accurately predict past board states in Conway's Game of Life, given the current state. My approach was to build a feed forward neural network module, as well as a parallel processing grid search algorithm to track results and fine-tune the hyperparameters of the network and prevent overfitting to the training data.
 				</p>
 				<p>
 					My neural network module was written in Python 3 and can be applied to other machine learning problems. It also can be provided with up to two evaluation data sets and will log the cost and accuracy on these data sets after each training epoch. After training with 200,000 data pieces for about 12 hours, my network was making predictions with about 87% accuracy.
@@ -173,7 +172,7 @@
 			<a href="http://www.github.com/thedigglemister/ft_database">Ft_Database</a>
 			<div class="info">
 				<p>
-					Ft_Datebase is a command line based database management system written in C that can be used to create, remove, update, and display user data.
+					Ft_Datebase is a command line database management system written in C that can be used to create, remove, update, and display user data.
 				</p> 
 				<p>
 					No additional libraries were allowed, so all methods were written from scratch, including custom serialization and deserialization methods to efficiently store data, as well as a custom query language parser modeled after SQL. Other features include automatic table backup in case data is corrupted or lost, the ability to sort or display data based on multiple conditions, and the ability to restrict columns to a specifc data type.
