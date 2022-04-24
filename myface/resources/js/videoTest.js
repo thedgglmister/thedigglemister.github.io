@@ -20,7 +20,7 @@ $(document).ready(function() {
 
     function main() {
         if (mobile)
-            $("body").html("<p id='mobile_error'>Sorry not sorry, no mobile browser support for you</p>")
+            $("body").html("<p id='mobile_error'>Sorry not sorry, no mobile support for my face</p>")
         else {
 
             var emptySlot = 9;
